@@ -18,10 +18,7 @@ let input;
 const numbers = [];
 let total = 0;
 
-const sumUp = (numbers) => {
-  numbers.map(number => total += number);
-  return console.log(`Общая сумма чисел равна ${total}`)
-}; 
+const sumUp = (numbers) => numbers.reduce((acc, number) => acc + number, 0); 
 
 
 const checkInput = () => {
@@ -47,7 +44,7 @@ const countEnteredNumbers = (numbers) => {
   checkInput();
   
   if(numbers.length > 0) {
-    sumUp(numbers);
+    console.log(`Общая сумма чисел равна ${sumUp(numbers)}`);
   } else {
     console.log('Вы не ввели числа');
   };
